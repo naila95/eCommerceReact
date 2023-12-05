@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { SlBasket } from "react-icons/sl";
 import { BasketContext } from "../../../context/BasketContext";
+import { Link } from "react-router-dom";
 
 const Product = ({ item }) => {
   const { basket, setBasket } = useContext(BasketContext);
@@ -17,9 +18,9 @@ const Product = ({ item }) => {
 
   return (
     <div className="p-8 w-[20%]">
-      <div className="">
+      <Link to={`${item.id}`}>
         <img className="w-[100%] h-[200px]" src={item.image} />
-      </div>
+      </Link>
       <div className="">
         <h3>{item.title}</h3>
         <div className="flex">

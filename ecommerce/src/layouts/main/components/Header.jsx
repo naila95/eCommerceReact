@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { SlBasket } from "react-icons/sl";
 import { AiOutlineMenu } from "react-icons/ai";
 import { BasketContext } from "../../../context/BasketContext";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const { basket } = useContext(BasketContext);
@@ -34,6 +35,13 @@ const Header = () => {
           </ul>
         </div>
         <div className="flex justify-between">
+          <div className="mr-5">
+            <Link to={"/auth/login"}>Login</Link>
+          </div>
+          <div className="mr-5">
+            <Link to={"/auth/register"}>Register</Link>
+          </div>
+
           <div className="relative">
             <SlBasket className="mr-6 text-2xl" />
             <span className="absolute top-[-8px] right-[12px] bg-red-600 rounded-xl px-1 text-white text-sm">
